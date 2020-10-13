@@ -46,7 +46,7 @@ const useStyles = createUseStyles({
     color: "white;"
   }
 });
-function log(){
+function log() {
   console.log("something something");
 }
 function AppFunction(props) {
@@ -63,7 +63,7 @@ function AppFunction(props) {
       <div className={classes.containVertical}>
         <div className={classes.containLockVertical}>
           <div className={classes.lockVerticalHeight}>
-            {<ChatAreaComponent isSmall={isSmall} log={log}/>}
+            {<ChatAreaComponent isSmall={isSmall} log={log} />}
           </div>
         </div>
       </div>
@@ -73,17 +73,16 @@ function AppFunction(props) {
 export class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {isSmall: false};
+    this.state = { isSmall: false };
   }
-  componentDidMount(){
-    window.addEventListener('resize',
-       ()=>
-         window.innerWidth<500?
-          this.setState({isSmall:true}):
-          this.setState({isSmall:false})
-        );
+  componentDidMount() {
+    window.addEventListener("resize", () =>
+      window.innerWidth < 500
+        ? this.setState({ isSmall: true })
+        : this.setState({ isSmall: false })
+    );
   }
   render() {
-      return ( <AppFunction isSmall={this.state.isSmall}/>);
+    return <AppFunction isSmall={this.state.isSmall} />;
   }
 }
