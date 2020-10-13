@@ -5,7 +5,7 @@ const ContactsStyling = createUseStyles({
     flexBasis: ({ theme }) => (theme.isSmall ? theme.height : 200),
     height: ({ theme }) => (theme.isSmall ? null : "100%"),
     width: ({ theme }) => (theme.isSmall ? "100%" : null),
-    backgroundColor: "green",
+    backgroundColor: "#F4B41A",
     overflow: "scroll"
   },
   innerContianerLarge: {
@@ -23,18 +23,18 @@ const ContactsStyling = createUseStyles({
     flexDirection: "column"
   },
   contactLarge: {
-    backgroundColor: "yellow",
+    backgroundColor: "#143D59",
     flexBasis: "100%",
     height: 60,
     margin: 5,
     borderRadius: 2
   },
   contactSmall: {
-    backgroundColor: "yellow",
+    backgroundColor: "#143D59",
     flexBasis: "100%",
     width: 60,
     margin: 5,
-    borderRadius: 2
+    borderRadius: 4
   }
 });
 export function Contacts(props) {

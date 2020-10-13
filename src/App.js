@@ -6,13 +6,15 @@ const useStyles = createUseStyles({
   containColumn: {
     width: "100%",
     height: "100%",
-    backgroundColor: "black",
+    backgroundColor: "#143D59",
     display: "flex",
     flexDirection: "column",
     alignContent: "flex-start"
   },
   header: {
-    backgroundColor: "blue",
+    backgroundColor: "#F4B41A",
+    boxShadow: "0px 0px 10px 2px ",
+    zIndex: 3,
     flexBasis: 50,
     display: "flex",
     justifyContent: "flex-start",

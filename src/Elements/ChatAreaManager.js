@@ -36,6 +36,7 @@ export class ChatAreaComponent extends React.Component {
     super(props);
     this.isSmall = this.props.isSmall;
     this.messagesScroll = React.createRef();
+    this.elementBottom = React.createRef();
     this.state = { contactsHeight: 60, messages: this.tempMessages };
   }
   contactScroll() {
@@ -46,6 +47,7 @@ export class ChatAreaComponent extends React.Component {
       contact.ref.current.addEventListener("click", () => {
         console.log("Conversation: " + contact.id);
         this.setState({ messages: this.messages[contact.id].messages });
+        this.elementBottom.current.scrollIntoView();
       })
     );
   }
@@ -63,9 +65,9 @@ export class ChatAreaComponent extends React.Component {
         Math.pow((messagesScroll.scrollTop - this.scroll) / 1, 2)
       );
       const h = this.state.contactsHeight;
-      if (scrollChange && h >= 10)
+      if (scrollChange && h >= 0)
         this.setState({
-          contactsHeight: h - distance < 10 ? 10 : h - distance
+          contactsHeight: h - distance < 0 ? 0 : h - distance
         });
       if (!scrollChange & (h <= 60))
         this.setState({
@@ -92,6 +94,7 @@ export class ChatAreaComponent extends React.Component {
         contactHeight={this.state.contactsHeight}
         contacts={this.contacts}
         messages={this.state.messages}
+        elementBottom={this.elementBottom}
       />
     );
   }

@@ -1,11 +1,11 @@
 import React from "react";
+import { Form } from "react-bootstrap";
 import { createUseStyles } from "react-jss";
 const MessagesStyling = createUseStyles({
   container: {
     flexGrow: 1,
     flexBasis: 1,
-    height: ({ theme }) => (theme.isSmall ? null : "100%"),
-    backgroundColor: "purple"
+    height: ({ theme }) => (theme.isSmall ? null : "100%")
   },
   lockSize: {
     position: "relative",
@@ -18,7 +18,7 @@ const MessagesStyling = createUseStyles({
     position: "absolute",
     top: 0,
     left: 0,
-    height: "100%",
+    bottom: 40,
     width: "100%",
     overflow: "scroll",
     display: "flex",
@@ -37,7 +37,24 @@ const MessagesStyling = createUseStyles({
     marginRight: 5,
     minWidth: 35,
     padding: 4,
-    backgroundColor: "yellow"
+    backgroundColor: "#F4B41A"
+  },
+  inputContainer: {
+    position: "absolute",
+    bottom: 0,
+    width: "100%",
+    height: 40,
+    display: "flex",
+    backgroundColor: "#F4B41A"
+  },
+  inputArea: {
+    flex: 1,
+    margin: 5,
+    zIndex: 2
+  },
+  customFormControl: {
+    maxHeight: "100%",
+    zIndex: 10
   }
 });
 export function Messages(props) {
@@ -70,6 +87,16 @@ export function Messages(props) {
               </div>
             </div>
           ))}
+          <div ref={props.elementBottom}></div>
+        </div>
+        <div className={classes.inputContainer}>
+          <div className={classes.inputArea}>
+            <Form.Control
+              className={classes.customFormControl}
+              type="text"
+              placeholder="message..."
+            />
+          </div>
         </div>
       </div>
     </div>
