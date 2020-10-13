@@ -1,6 +1,6 @@
 import React from "react";
 import { createUseStyles } from "react-jss";
-import { ChatAreaComponent } from "./Elements/ChatArea.js";
+import { ChatAreaComponent } from "./Elements/ChatAreaManager";
 
 const useStyles = createUseStyles({
   containColumn: {
@@ -73,7 +73,7 @@ function AppFunction(props) {
 export class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { isSmall: false };
+    this.state = { isSmall: window.innerWidth < 500 ? true : false };
   }
   componentDidMount() {
     window.addEventListener("resize", () =>
