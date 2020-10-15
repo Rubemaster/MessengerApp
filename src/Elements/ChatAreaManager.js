@@ -13,7 +13,7 @@ export class ChatAreaComponent extends React.Component {
   scrollStart = 0;
   direction = true;
   contacts = genrateContacts(10);
-  messages = genrateMessages(20, this.contacts);
+  messages = genrateMessages(5, this.contacts);
   constructor(props) {
     super(props);
     this.isSmall = this.props.isSmall;
