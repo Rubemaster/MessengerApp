@@ -6,7 +6,8 @@ const ContactsStyling = createUseStyles({
     height: ({ theme }) => (theme.isSmall ? null : "100%"),
     width: ({ theme }) => (theme.isSmall ? "100%" : null),
     backgroundColor: "#F4B41A",
-    overflow: "scroll"
+    overflow: "scroll",
+    zIndex: 1
   },
   innerContianerLarge: {
     position: "relative",
@@ -24,6 +25,7 @@ const ContactsStyling = createUseStyles({
   },
   contactLarge: {
     backgroundColor: "#143D59",
+    color: "white",
     flexBasis: "100%",
     height: 60,
     margin: 5,
@@ -31,6 +33,7 @@ const ContactsStyling = createUseStyles({
   },
   contactSmall: {
     backgroundColor: "#143D59",
+    color: "white",
     flexBasis: "100%",
     width: 60,
     margin: 5,

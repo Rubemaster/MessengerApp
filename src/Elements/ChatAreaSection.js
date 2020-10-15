@@ -1,6 +1,6 @@
 import React from "react";
 import { Contacts } from "./Contacts.js";
-import { Messages } from "./Messages.js";
+import { MessageArea } from "./MessageArea.js";
 export function ChatAreaFunction(props) {
   return (
     <>
@@ -8,11 +8,13 @@ export function ChatAreaFunction(props) {
         <Contacts isSmall={props.isSmall} contacts={props.contacts} />
       )}
 
-      <Messages
+      <MessageArea
         isSmall={props.isSmall}
         scrollAreaRef={props.messagesScroll}
         messages={props.messages}
         elementBottom={props.elementBottom}
+        sendButton={props.sendMessageButton}
+        sendField={props.sendMessageField}
       />
       {props.isSmall ? (
         <Contacts

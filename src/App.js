@@ -13,7 +13,7 @@ const useStyles = createUseStyles({
   },
   header: {
     backgroundColor: "#F4B41A",
-    boxShadow: "0px 0px 10px 2px ",
+    boxShadow: "0px 0px 10px -2px ",
     zIndex: 3,
     flexBasis: 50,
     display: "flex",
@@ -75,11 +75,11 @@ function AppFunction(props) {
 export class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { isSmall: window.innerWidth < 500 ? true : false };
+    this.state = { isSmall: window.innerWidth < 600 ? true : false };
   }
   componentDidMount() {
     window.addEventListener("resize", () =>
-      window.innerWidth < 500
+      window.innerWidth < 600
         ? this.setState({ isSmall: true })
         : this.setState({ isSmall: false })
     );
